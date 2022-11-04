@@ -7,7 +7,6 @@ const setRotation = (element, rotationPercentage) => {
 }
 function setClock(){
     const currentData = new Date()
-
     const secondsPercentage = currentData.getSeconds() / 60
     const minutesPercentage = (secondsPercentage + currentData.getMinutes()) / 60
     const hoursPercentage = (minutesPercentage + currentData.getHours()) / 12
@@ -17,5 +16,4 @@ function setClock(){
     setRotation(handHours, hoursPercentage)
 }
 setClock()
-
-setInterval(setClock, 10)
+setInterval(setClock, 1000)
