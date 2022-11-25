@@ -11,7 +11,7 @@ function setClock(){
 
     const secondsPercentage = currentData.getSeconds() / 60
     const minutesPercentage = (secondsPercentage + currentData.getMinutes()) / 60
-    const hoursPercentage = (minutesPercentage + currentData.getDate()) / 12
+    const hoursPercentage = (minutesPercentage + currentData.getHours()) / 12
 
     setRotation(handSeconds, secondsPercentage )
     setRotation(handMinutes, minutesPercentage)
