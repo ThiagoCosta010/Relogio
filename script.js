@@ -5,17 +5,16 @@ const handHours = document.querySelector('.hand.hours')
 const setRotation = (element, rotationPercentage) => {
     element.style.setProperty('--rotation', rotationPercentage * 360)
 }
-
-function setClock(){
+const setClock = () => {
     const currentData = new Date()
 
-    const secondsPercentage = currentData.getSeconds() / 60
-    const minutesPercentage = (secondsPercentage + currentData.getMinutes()) / 60
-    const hoursPercentage = (minutesPercentage + currentData.getHours()) / 12
+    const percentageSeconds = currentData.getSeconds() / 60
+    const percentageMinutes = (percentageSeconds + currentData.getMinutes()) / 60
+    const percentageHours = (percentageMinutes + currentData.getHours()) / 12
 
-    setRotation(handSeconds, secondsPercentage )
-    setRotation(handMinutes, minutesPercentage)
-    setRotation(handHours, hoursPercentage)
+    setRotation(handSeconds, percentageSeconds)
+    setRotation(handMinutes, percentageMinutes)
+    setRotation(handHours, percentageHours)
 }
 setClock()
 setInterval(setClock, 1000)
