@@ -6,11 +6,10 @@ const setRotation = (element, rotationPercentage) => {
     element.style.setProperty('--rotation', rotationPercentage * 360)
 }
 const setClock = () => {
-    const currentData = new Date()
-
-    const percentageSeconds = currentData.getSeconds() / 60
-    const percentageMinutes = (percentageSeconds + currentData.getMinutes()) / 60
-    const percentageHours = (percentageMinutes + currentData.getHours()) / 12
+    const currentDate = new Date()
+    const percentageSeconds = currentDate.getSeconds() / 60
+    const percentageMinutes =(percentageSeconds + currentDate.getMinutes()) / 60
+    const percentageHours = (percentageMinutes + currentDate.getHours()) / 12
 
     setRotation(handSeconds, percentageSeconds)
     setRotation(handMinutes, percentageMinutes)
